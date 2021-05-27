@@ -1,0 +1,41 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	controllerName="org.ubb.books.controller.App"
+	id="inputdialog">
+	<Dialog title="{i18n>BorrowTitle}" id="BorrowBookDialog">
+	  <content>
+	   <f:SimpleForm id="SimpleFormDisplay354"
+			minWidth="1024"
+			maxContainerCols="2"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Details"
+			labelSpanL="5"
+			labelSpanM="5">
+			<f:content>
+				<Label text="ISBN" />
+				<Text id="Isbn" text="{Isbn}" />
+				<Label text="{i18n>Title}" />
+				<Text id="Title" text="{Title}" />
+				<Label text="{i18n>Author}" />
+				<Text id="Author" text="{Author}" />
+				<Label text="{i18n>PublishedOn}" />
+				<Text id="published" text="{ 
+					path: 'PublishDate',
+					type: 'sap.ui.model.type.Date',
+					formatOptions: { pattern: 'dd.MM.yyyy', UTC: false }
+        		}"/>
+                <Label text="{i18n>Language}" />
+				<Text id="language" text="{Language}" />
+
+			</f:content>
+		</f:SimpleForm>
+	  </content>
+		<buttons>
+	    	<Button text="{i18n>Borrow}" press="onBorrowBookOkPress" />
+	    	<Button text="{i18n>Cancel}" press="onBorrowBookCancelPress" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
